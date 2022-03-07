@@ -1,0 +1,20 @@
+import React from "react"
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import HomeScreen from "./screens/homeScreen";
+import EventScreen from "./screens/EventsScreen";
+
+const Stack = createNativeStackNavigator();
+
+function Routes() {
+    return (
+        <NavigationContainer>
+            <Stack.Navigator >
+                <Stack.Screen name="HomeScreen" component={EventScreen} options={{headerShown: false}}/>
+                <Stack.Screen name="EventScreen" component={HomeScreen} options={{headerShown: false}}/>
+            </Stack.Navigator>
+        </NavigationContainer>
+  );
+}
+
+export default Routes;
