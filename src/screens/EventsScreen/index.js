@@ -61,7 +61,7 @@ const DATA = [
 const EventScreen = ({navigation}) => {
 
     function renderItem({item}){
-        return <CardEvents list={item}/>;
+        return <CardEvents list={item} navigation={navigation}/>;
     };
     function headerComponent(){
         return <EventHeader navigation={navigation}/>

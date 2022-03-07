@@ -1,6 +1,6 @@
 import React from "react";
-import {  Image} from "react-native";
 import Style from "./style";
+import ButtonBack from "../ButtonBack"
 
 
 
@@ -10,12 +10,7 @@ const EventHeader = ({navigation}) => {
             <Style.WrapperInto>
                 <Style.Tittle>Eventos disponíveis</Style.Tittle>
 
-                <Style.ButtonBack onPress={() => navigation.goBack()}>
-                    <Style.WapperButton>
-                        <Image source={require("../../assets/images/arrow-left.png")}/>
-                        <Style.ButtonText>Voltar</Style.ButtonText>
-                    </Style.WapperButton>
-                </Style.ButtonBack>
+                <ButtonBack navigation={navigation}/>
             </Style.WrapperInto>
 
             <Style.Description>

@@ -4,7 +4,7 @@ import Style from "./style";
 
 
 
-const CardEvents = ({list}) => {
+const CardEvents = ({list, navigation}) => {
 
     return (
         <>
@@ -26,7 +26,7 @@ const CardEvents = ({list}) => {
                         <Style.Contributor>Comunidade Ballerini</Style.Contributor>
                     </Style.WrapperOrg>
 
-                    <Style.ButtonDetails>
+                    <Style.ButtonDetails onPress={() => navigation.navigate('DetailsScreen', list)}>
                         <Image source={require("../../assets/images/Arrow-rightOrange.png")}/>
                     </Style.ButtonDetails>
                 </Style.Details>

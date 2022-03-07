@@ -21,17 +21,20 @@ Style.WrapperDate = styled.View`
 Style.Date = styled.Text`
     font-size:16px;
     color:#FF5100;
-    font-weight:bold;
+    font-family:"Rajdhani-Bold";
 `
 
 Style.Time = styled.Text`
     font-size:16px;
     color:#FF5100;
+    font-family:"Rajdhani-Medium";
 `
 
 Style.Title = styled.Text`
     color:#282828;
     font-size:20px;
+    font-family:"Epilogue-ExtraBold";
+    line-height: 24px;
 
 `
 
@@ -39,6 +42,8 @@ Style.Description = styled.Text`
     color:#959595;
     font-size:10px;
     margin:5px 0;
+    font-family:"Epilogue-Regular";
+    line-height: 14px;
 `
 Style.Details = styled.View`
     flex-direction:row;
@@ -53,12 +58,13 @@ Style.WrapperOrg = styled.View`
 Style.Organizado = styled.Text`
     font-size:8px;
     color:#282828;
+    font-family:"Epilogue-Medium";
 `
 
 Style.Contributor =styled.Text`
     font-size:8px;
     color: #282828;
-    font-weight: bold;
+    font-family:"Epilogue-Bold";
 `
 Style.ButtonDetails = styled.Pressable`
     justify-content:center;

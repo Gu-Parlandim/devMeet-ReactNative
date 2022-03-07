@@ -17,24 +17,28 @@ Style.WrappText = styled.View`
 
 Style.Title  = styled.Text`
     font-size:40px;
-    font-weight:bold;
+    font-family:"Epilogue-ExtraBold";
     margin-bottom:29px;
 
 `
 Style.TitleAfter = styled.Text`
     color: #FF5100;
     font-size:44px;
+    font-family:"Epilogue-ExtraBold";
 `
 
 Style.Text = styled.Text`
     color: #C6C6C6;
     font-size:24px;
-    max-width:200px;
+    max-width:270px;
+    font-family:"Epilogue-Regular";
+    line-height: 40px;
 `
 
-Style.Span =styled.Text`
+Style.Span = styled.Text`
     background-color:#FF5100;
     padding:1px;
+    font-family:"Epilogue-Regular";
 `
 
 Style.MainImage = styled.View`

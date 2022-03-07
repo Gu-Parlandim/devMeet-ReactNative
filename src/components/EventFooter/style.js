@@ -9,8 +9,9 @@ Style.EndLline = styled.View`
     justify-content:center;
 `
 Style.EndLlineTex = styled.Text`
-    color:#fff;
+    color: rgba(255, 255, 255, 0.5);
     font-size:12px;
+    font-family:"Epilogue-Medium";
 `
 
 export default Style

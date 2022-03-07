@@ -19,8 +19,7 @@ const HomeScreen = ({navigation}) => {
 
                     <View>
                         <Style.Text>
-                            Encontre o seu
-                            <Style.Span > próximo</Style.Span> evento de programação!
+                            Encontre o seu <Style.Span >próximo</Style.Span> evento de programação!
                         </Style.Text>
                     </View>
                 </Style.WrappText>
