@@ -10,8 +10,8 @@ function Routes() {
     return (
         <NavigationContainer>
             <Stack.Navigator >
-                <Stack.Screen name="HomeScreen" component={EventScreen} options={{headerShown: false}}/>
-                <Stack.Screen name="EventScreen" component={HomeScreen} options={{headerShown: false}}/>
+                <Stack.Screen name="HomeScreen" component={HomeScreen} options={{headerShown: false}}/>
+                <Stack.Screen name="EventScreen" component={EventScreen} options={{headerShown: false}}/>
             </Stack.Navigator>
         </NavigationContainer>
   );

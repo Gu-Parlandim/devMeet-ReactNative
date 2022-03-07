@@ -41,7 +41,9 @@ Style.Description = styled.Text`
     margin:5px 0;
 `
 Style.Details = styled.View`
-    
+    flex-direction:row;
+    justify-content: space-between;
+    align-items:center;
 `
 Style.WrapperOrg = styled.View`
     flex-direction:row;
@@ -61,6 +63,8 @@ Style.Contributor =styled.Text`
 Style.ButtonDetails = styled.Pressable`
     justify-content:center;
     align-items: center;
+    width:5px;
+    height:5px;
 `
 
 export default Style

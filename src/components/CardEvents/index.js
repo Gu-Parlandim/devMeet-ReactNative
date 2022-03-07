@@ -4,13 +4,13 @@ import Style from "./style";
 
 
 
-const CardEvents = ({children}) => {
+const CardEvents = ({list}) => {
 
     return (
         <>
             <Style.Container>
                 <Style.WrapperDate>
-                    <Style.Date>02/mar </Style.Date>
+                    <Style.Date>02/mar</Style.Date>
                     <Style.Time>- 19:00</Style.Time>
                 </Style.WrapperDate>
 
@@ -27,7 +27,7 @@ const CardEvents = ({children}) => {
                     </Style.WrapperOrg>
 
                     <Style.ButtonDetails>
-                        <Image />
+                        <Image source={require("../../assets/images/Arrow-rightOrange.png")}/>
                     </Style.ButtonDetails>
                 </Style.Details>
             </Style.Container>

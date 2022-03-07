@@ -1,7 +1,9 @@
 import React from "react";
 import {  Text, StatusBar, Image, FlatList} from "react-native";
-import Style from "./styles";
+import Style from "./style";
 import CardEvents from "../../components/CardEvents";
+import EventHeader from "../../components/EventHeader";
+import EventFooter from "../../components/EventFooter";
 
 const DATA = [
     {
@@ -40,6 +42,13 @@ const DATA = [
         autor: "Comunidade Ballerini"
     },
     {
+        id: 6,
+        date: "24/02/2002",
+        title: "lorem puse nero pe",
+        description: "Você pode criar interfaces malucas que dispertam sua criativade. Usando de recursos do próprio figma, como seus plugins.",
+        autor: "Comunidade Ballerini"
+    },
+    {
         id: 7,
         date: "24/02/2002",
         title: "lorem puse nero pe",
@@ -51,34 +60,29 @@ const DATA = [
 
 const EventScreen = ({navigation}) => {
 
+    function renderItem({item}){
+        return <CardEvents list={item}/>;
+    };
+    function headerComponent(){
+        return <EventHeader navigation={navigation}/>
+    };
+    function footerComponent(){
+        return <EventFooter />
+    };
+
     return (
         <>
             <Style.Container>
-            <StatusBar  backgroundColor="#282828"/>
-                <Style.WrapperInto>
-                    <Style.Tittle>Eventos disponíveis</Style.Tittle>
-
-                    <Style.ButtonBack>
-                        <Style.WapperButton onPress={() => navigation.goBack()}>
-                            <Image source={require("../../assets/images/arrow-left.png")}/>
-                            <Style.ButtonText>Voltar</Style.ButtonText>
-                        </Style.WapperButton>
-                    </Style.ButtonBack>
-
-                </Style.WrapperInto>
-
-                <Style.Description>
-                    <Style.DescriptionText>
-                        Selecione o evento desejado. E espere sua data!
-                    </Style.DescriptionText>
-                </Style.Description>
-
                 <Style.EventList>
-                    <FlatList 
+                    <FlatList  
+                        showsVerticalScrollIndicator={false} 
+                        showsHorizontalScrollIndicator={false}
                         data={DATA}
-                        renderItem={(item) => <CardEvents>{item}</CardEvents>}/>
+                        keyExtractor={item => item.id}
+                        ListHeaderComponent={headerComponent}
+                        ListFooterComponent={footerComponent}
+                        renderItem={renderItem}/>
                 </Style.EventList>
-
             </Style.Container>
         </>
     );

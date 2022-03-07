@@ -36,7 +36,7 @@ const HomeScreen = ({navigation}) => {
                                 backgroundColor: pressed ? "#ff510081" : "#FF5100"
                             }
                         ]} 
-                        onPress={() => navigation.navigation.push('EventScreen')}>
+                        onPress={() => navigation.navigate('EventScreen')}>
 
                         <Style.ButtonIcon source={require('../../assets/images/Arrow-right.png')}/>
                     </Style.Button>

@@ -2,11 +2,8 @@ import styled from "styled-components/native";
 
 const Style = {};
 
-Style.Container = styled.SafeAreaView`
-    background-color: #282828;
-    flex: 1;
-    padding:12% 9%;
-`
+
+Style.ContaineScholl = styled.ScrollView``
 
 Style.WrapperInto = styled.View`
     flex-direction:row;
@@ -42,8 +39,15 @@ Style.DescriptionText = styled.Text`
     color:#C6C6C6 ;
 `
 
-Style.EventList = styled.SafeAreaView``
 
-
+Style.EndLline = styled.View`
+    padding:10px;
+    align-items:center;
+    justify-content:center;
+`
+Style.EndLlineTex = styled.Text`
+    color:#fff;
+    font-size:12px;
+`
 
 export default Style
