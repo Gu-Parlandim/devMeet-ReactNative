@@ -86,6 +86,7 @@ Style.BoxLink = styled.View`
     border-radius: 5px;
     justify-content:space-between;
     align-items:center;
+    flex-direction:row;
 `
 
 Style.Link = styled.Text`

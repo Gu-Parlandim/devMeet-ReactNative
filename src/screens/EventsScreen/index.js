@@ -1,64 +1,30 @@
-import React from "react";
-import {  Text, StatusBar, Image, FlatList} from "react-native";
+import React, {useState, useEffect} from "react";
+import {  FlatList, Text} from "react-native";
 import Style from "./style";
 import CardEvents from "../../components/CardEvents";
 import EventHeader from "../../components/EventHeader";
 import EventFooter from "../../components/EventFooter";
 
-const DATA = [
-    {
-        id: 1,
-        date: "24/02/2002",
-        title: "lorem puse nero pe",
-        description: "Você pode criar interfaces malucas que dispertam sua criativade. Usando de recursos do próprio figma, como seus plugins.",
-        autor: "Comunidade Ballerini"
-    },
-    {
-        id: 2,
-        date: "24/02/2002",
-        title: "lorem puse nero pe",
-        description: "Você pode criar interfaces malucas que dispertam sua criativade. Usando de recursos do próprio figma, como seus plugins.",
-        autor: "Comunidade Ballerini"
-    },
-    {
-        id: 3,
-        date: "24/02/2002",
-        title: "lorem puse nero pe",
-        description: "Você pode criar interfaces malucas que dispertam sua criativade. Usando de recursos do próprio figma, como seus plugins.",
-        autor: "Comunidade Ballerini"
-    },
-    {
-        id: 4,
-        date: "24/02/2002",
-        title: "lorem puse nero pe",
-        description: "Você pode criar interfaces malucas que dispertam sua criativade. Usando de recursos do próprio figma, como seus plugins.",
-        autor: "Comunidade Ballerini"
-    },
-    {
-        id: 5,
-        date: "24/02/2002",
-        title: "lorem puse nero pe",
-        description: "Você pode criar interfaces malucas que dispertam sua criativade. Usando de recursos do próprio figma, como seus plugins.",
-        autor: "Comunidade Ballerini"
-    },
-    {
-        id: 6,
-        date: "24/02/2002",
-        title: "lorem puse nero pe",
-        description: "Você pode criar interfaces malucas que dispertam sua criativade. Usando de recursos do próprio figma, como seus plugins.",
-        autor: "Comunidade Ballerini"
-    },
-    {
-        id: 7,
-        date: "24/02/2002",
-        title: "lorem puse nero pe",
-        description: "Você pode criar interfaces malucas que dispertam sua criativade. Usando de recursos do próprio figma, como seus plugins.",
-        autor: "Comunidade Ballerini"
-    }
 
-]
+function EventScreen ({navigation}){
 
-const EventScreen = ({navigation}) => {
+    const [dateEvents, setDateEvents] = useState({})
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        async function getUsers(){
+            const  response = await fetch("https://dev-meet-backend.herokuapp.com/events?_page=1&_limit=10")
+            const date = await response.json()
+            
+            setDateEvents(date)
+            if(dateEvents){
+                setLoading(false)
+            }
+            return 
+        }
+        getUsers()
+    }, [])
+
 
     function renderItem({item}){
         return <CardEvents list={item} navigation={navigation}/>;
@@ -74,15 +40,18 @@ const EventScreen = ({navigation}) => {
         <>
             <Style.Container>
                 <Style.EventList>
-                    <FlatList  
-                        showsVerticalScrollIndicator={false} 
-                        showsHorizontalScrollIndicator={false}
-                        data={DATA}
-                        keyExtractor={item => item.id}
-                        ListHeaderComponent={headerComponent}
-                        ListFooterComponent={footerComponent}
-                        renderItem={renderItem}/>
-                </Style.EventList>
+                    {loading  ? <Text>carregando...</Text> :
+                        <FlatList  
+                            showsVerticalScrollIndicator={false} 
+                            showsHorizontalScrollIndicator={false}
+                            data={dateEvents}
+                            keyExtractor={item => item.id}
+                            ListHeaderComponent={headerComponent}
+                            renderItem={renderItem}
+                            ListFooterComponent={footerComponent}
+                            /> 
+                    }
+                    </Style.EventList>
             </Style.Container>
         </>
     );

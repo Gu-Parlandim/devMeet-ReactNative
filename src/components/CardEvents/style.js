@@ -10,7 +10,6 @@ Style.Container = styled.SafeAreaView`
     margin-top:9px;
     border-radius:9px;
     flex:1;
-    min-height:180px;
 `
 
 Style.WrapperDate = styled.View`
@@ -52,7 +51,7 @@ Style.Details = styled.View`
 `
 Style.WrapperOrg = styled.View`
     flex-direction:row;
-    margin:5px 0;
+    margin:10px 0 18px;
 `
 
 Style.Organizado = styled.Text`

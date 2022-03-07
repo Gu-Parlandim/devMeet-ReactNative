@@ -1,29 +1,38 @@
-import React from "react";
-import {  Text, StatusBar, Image} from "react-native";
+import React ,{memo} from "react";
+import {  Image} from "react-native";
 import Style from "./style";
 
 
+const CardEventsT = ({list, navigation}) => {
+    function formatDate(date){
+        let dateTime = new Date(`${date}`).toLocaleString()
+        const NewDate = `${dateTime.substring(8,11)}/${dateTime.substring(0,3)}`.toUpperCase();
+        return NewDate;
+    }
 
-const CardEvents = ({list, navigation}) => {
+    function formatTime(dateTime){
+        const time = new Date(`${dateTime}`).toLocaleTimeString("pt-Bt", {hour: "numeric",minute: "numeric"}).toString();
+        return time.substring(0,5);
+    }
 
     return (
         <>
             <Style.Container>
                 <Style.WrapperDate>
-                    <Style.Date>02/mar</Style.Date>
-                    <Style.Time>- 19:00</Style.Time>
+                    <Style.Date>{formatDate(list.dataInicio)} </Style.Date>
+                    <Style.Time>{formatTime(list.dataInicio)}</Style.Time>
                 </Style.WrapperDate>
 
-                <Style.Title>Criando interfaces muito malucas com o Figma!</Style.Title>
+                <Style.Title>{list.titulo}</Style.Title>
 
                 <Style.Description  numberOfLines={3}>
-                    Você pode criar interfaces malucas que dispertam sua criativade. Usando de recursos do próprio figma, como seus plugins.
+                    {list.descricao}
                 </Style.Description>
 
                 <Style.Details>
                     <Style.WrapperOrg>
                         <Style.Organizado>Organizado por: </Style.Organizado>
-                        <Style.Contributor>Comunidade Ballerini</Style.Contributor>
+                        <Style.Contributor>{list.organizador}</Style.Contributor>
                     </Style.WrapperOrg>
 
                     <Style.ButtonDetails onPress={() => navigation.navigate('DetailsScreen', list)}>
@@ -35,4 +44,5 @@ const CardEvents = ({list, navigation}) => {
     );
 };
 
+const CardEvents = memo(CardEventsT);
 export default CardEvents;
