@@ -5,7 +5,7 @@ const Style = {};
 Style.Container = styled.SafeAreaView`
     background-color: #282828;
     flex: 1;
-    padding:12%  9% 0;
+    padding:5%  9% 0;
 `
 
 Style.WrappInto = styled.View`

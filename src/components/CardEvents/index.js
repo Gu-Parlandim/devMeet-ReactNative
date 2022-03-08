@@ -1,6 +1,6 @@
 import React ,{memo} from "react";
-import {  Image} from "react-native";
 import Style from "./style";
+import IArrowOrange from "../../assets/images/arrow-rightOrange.svg"
 
 
 const CardEventsT = ({list, navigation}) => {
@@ -35,8 +35,13 @@ const CardEventsT = ({list, navigation}) => {
                         <Style.Contributor>{list.organizador}</Style.Contributor>
                     </Style.WrapperOrg>
 
-                    <Style.ButtonDetails onPress={() => navigation.navigate('DetailsScreen', list)}>
-                        <Image source={require("../../assets/images/Arrow-rightOrange.png")}/>
+                    <Style.ButtonDetails 
+                    onPress={() => navigation.navigate('DetailsScreen', list)}
+                    style={({pressed}) => [
+                        {
+                            opacity: pressed ? 0.4 : 1
+                        }]}>
+                            <IArrowOrange />
                     </Style.ButtonDetails>
                 </Style.Details>
             </Style.Container>

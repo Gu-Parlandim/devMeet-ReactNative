@@ -3,7 +3,6 @@ import styled from "styled-components/native";
 const Style = {};
 
 Style.ButtonBack = styled.Pressable`
-    color: #C6C6C6;
 `
 Style.WapperButton = styled.View`
     flex-direction:row;

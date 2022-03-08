@@ -1,6 +1,8 @@
 import React from "react";
-import { Image, View, StatusBar} from "react-native";
+import { View, StatusBar} from "react-native";
 import Style from "./styles";
+import IPerson from "../../assets/images/person.svg"
+import IArrowRight from "../../assets/images/arrow-right.svg"
 
 
 
@@ -25,8 +27,7 @@ const HomeScreen = ({navigation}) => {
                 </Style.WrappText>
 
                 <Style.MainImage>
-                    <Image  source={require('../../assets/images/person.png')}/>
-                    
+                    <IPerson />
                 </Style.MainImage>
 
                 <View>
@@ -35,9 +36,9 @@ const HomeScreen = ({navigation}) => {
                                 backgroundColor: pressed ? "#ff510081" : "#FF5100"
                             }
                         ]} 
-                        onPress={() => navigation.navigate('EventScreen')}>
+                        onPress={() => navigation.navigate('CategoryScreen')}>
 
-                        <Style.ButtonIcon source={require('../../assets/images/Arrow-right.png')}/>
+                        <IArrowRight />
                     </Style.Button>
                 </View>
                 

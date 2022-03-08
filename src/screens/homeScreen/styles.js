@@ -55,8 +55,4 @@ Style.Button = styled.Pressable`
 
 `
 
-Style.ButtonIcon = styled.Image`
-    aspect-ratio: 1;
-`
-
 export default Style;

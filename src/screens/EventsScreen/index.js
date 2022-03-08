@@ -6,14 +6,15 @@ import EventHeader from "../../components/EventHeader";
 import EventFooter from "../../components/EventFooter";
 
 
-function EventScreen ({navigation}){
+function EventScreen ({navigation, route}){
+    const { id } = route.params;
 
     const [dateEvents, setDateEvents] = useState({})
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        async function getUsers(){
-            const  response = await fetch("https://dev-meet-backend.herokuapp.com/events?_page=1&_limit=10")
+        async function getEvents(){
+            const  response = await fetch(`https://dev-meet-backend.herokuapp.com/events?tipoId=${id}&page=1`)
             const date = await response.json()
             
             setDateEvents(date)
@@ -22,7 +23,7 @@ function EventScreen ({navigation}){
             }
             return 
         }
-        getUsers()
+        getEvents()
     }, [])
 
 
