@@ -3,6 +3,7 @@ import {StatusBar, Text, Pressable, FlatList} from "react-native"
 import Style from  "./style"
 import CardCategory from "../../components/CardCategory"
 import IArrowRight from "../../assets/images/arrow-right.svg"
+import Loading from "../../components/Loading"
 
 function CategoryScreen({navigation}){
 
@@ -23,7 +24,6 @@ function CategoryScreen({navigation}){
             hasActive: true,
             elementSelected: id
         })
-        console.log(id)
         return
     }
 
@@ -60,21 +60,22 @@ function CategoryScreen({navigation}){
     };
 
     return (
-        <Style.Container>
-            <StatusBar backgroundColor="#282828"/>
+    <>
+        <StatusBar backgroundColor="#282828"/>
+        {loading ? <Loading /> : <Style.Container>
             <Style.WrapperInto>
                 <Style.Title>Que tipo de evento você procura?</Style.Title>
                 <Style.Description>Selecione a categoria que mais te agrada!</Style.Description>
             </Style.WrapperInto>
 
-            {!loading && <Style.WrapperCards 
+            <Style.WrapperCards 
                 showsVerticalScrollIndicator={false} 
                 showsHorizontalScrollIndicator={false}
                 data={dateCategory}
                 keyExtractor={item => item.id}
                 numColumns={2}
                 renderItem={renderItem}
-                />}
+                />
 
 
             {elementActive.hasActive && 
@@ -94,7 +95,8 @@ function CategoryScreen({navigation}){
                     </Style.ButtonNext>
                 </Style.WrappButtonNext>}
 
-        </Style.Container>
+        </Style.Container>}
+    </>
     )
 }
 

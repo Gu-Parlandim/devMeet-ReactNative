@@ -94,4 +94,6 @@ Style.Link = styled.Text`
     color:#fff;
     font-family:"Rajdhani-Regular";
 `
+
+
 export default Style

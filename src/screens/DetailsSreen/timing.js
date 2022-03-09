@@ -1,9 +1,9 @@
-function twoDigits(numero){
-    if(numero < 10 && numero > -1){
-        return "0" + numero
+function twoDigits(num){
+    if(num < 10 && num > -1){
+        return "0" + num
     }
     else{
-        return numero
+        return num
     }
 }
 

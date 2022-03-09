@@ -7,8 +7,7 @@ Style.Button = styled.Pressable`
     border-radius: 6.85714px;
     justify-content:center;
     align-items:center;
-    max-width:17px;
-    max-height:17px;
+    padding: 2px;
 `
 
 export default Style

@@ -4,6 +4,7 @@ import Style from "./style";
 import CardEvents from "../../components/CardEvents";
 import EventHeader from "../../components/EventHeader";
 import EventFooter from "../../components/EventFooter";
+import Loading from "../../components/Loading";
 
 
 function EventScreen ({navigation, route}){
@@ -41,7 +42,7 @@ function EventScreen ({navigation, route}){
         <>
             <Style.Container>
                 <Style.EventList>
-                    {loading  ? <Text>carregando...</Text> :
+                    {loading  ? <Loading /> :
                         <FlatList  
                             showsVerticalScrollIndicator={false} 
                             showsHorizontalScrollIndicator={false}

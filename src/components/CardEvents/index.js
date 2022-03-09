@@ -1,20 +1,11 @@
 import React ,{memo} from "react";
 import Style from "./style";
 import IArrowOrange from "../../assets/images/arrow-rightOrange.svg"
-
+import formatDate from "../../services/formatDate";
+import formatTime from "../../services/formatTime";
 
 const CardEventsT = ({list, navigation}) => {
-    function formatDate(date){
-        let dateTime = new Date(`${date}`).toLocaleString()
-        const NewDate = `${dateTime.substring(8,11)}/${dateTime.substring(0,3)}`.toUpperCase();
-        return NewDate;
-    }
-
-    function formatTime(dateTime){
-        const time = new Date(`${dateTime}`).toLocaleTimeString("pt-Bt", {hour: "numeric",minute: "numeric"}).toString();
-        return time.substring(0,5);
-    }
-
+   
     return (
         <>
             <Style.Container>

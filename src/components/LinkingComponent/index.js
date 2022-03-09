@@ -1,18 +1,17 @@
 import React,{useCallback} from "react";
 import { Image, Linking, Alert} from "react-native";
 import Style from "./style";
+import IArrowGreen from "../../assets/images/Arrow-green.svg"
 
 
 
 
 const LinkingComponent = ({url}) => {
     const handlePress = useCallback(async () => {
-        const supported = await Linking.canOpenURL(url);
-    
-        if (supported) {
-            await Linking.openURL(url);
+        if (url.startsWith("https://")) {
+            await Linking.openURL(`${url}`);
         } else {
-          Alert.alert(`Erro ao tenta abrir: ${url}`);
+            await Linking.openURL(`https://${url}`);
         }
       }, [url]);
 
@@ -21,7 +20,7 @@ const LinkingComponent = ({url}) => {
     return (
         <>
            <Style.Button  onPress={handlePress}>
-               <Image source={require("../../assets/images/Arrow-Grenn.png")}/>
+               <IArrowGreen width={20} height={20} />
            </Style.Button>
         </>
     );

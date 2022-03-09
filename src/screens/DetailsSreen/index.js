@@ -11,7 +11,7 @@ import EventsActive from "../../components/EventsActive";
 
 
 const DetailsScreen = ({ route, navigation }) => {
-    const { id, dataInicio, descricao, titulo, organizador, link } = route.params;
+    const { id, dataInicio, descricao, titulo, organizador, link, dataPublicacao } = route.params;
 
     const [timeLeft, setTimeLeft] = useState(currentTime(dataInicio));
 
@@ -58,15 +58,16 @@ const DetailsScreen = ({ route, navigation }) => {
                             </Style.BoxLink>
                     </Style.WrapperEventLink>
 
-                    {!timeLeft.differenceTime < 1 
-                        ? <EventsActive /> 
+                    {timeLeft.differenceTime < 1 
+                        ? <EventsActive timing={timeLeft.differenceTime}/> 
 
                         :<CardHours 
                             days={timeLeft.days} 
                             minutes={timeLeft.minutes}
-                            hours={timeLeft.hours}/> }
-
-                   
+                            hours={timeLeft.hours}
+                            postDate={ dataPublicacao}
+                            initDate={dataInicio} 
+                            timing ={timeLeft.differenceTime}/>}
                 </ScrollView>
             </Style.Container>
         </>

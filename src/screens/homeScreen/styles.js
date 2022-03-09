@@ -48,8 +48,8 @@ Style.MainImage = styled.View`
 Style.Button = styled.Pressable`
     background-color: #FF5100; 
     border-radius: 12px;
-    width: 53px;
-    height: 53px;
+    width: 40px;
+    height: 40px;
     justify-content: center;
     align-items: center;
 
