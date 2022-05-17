@@ -1,4 +1,4 @@
-# Dev Meet-ReactNative
+# Dev Meet-React Native
 
 <img src="https://github.com/Gu-Parlandim/devMeet-ReactNative/blob/main/src/assets/images/Screenshot%20(177).png" alt="exemplo imagem">
 
